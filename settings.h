@@ -149,7 +149,7 @@ typedef struct {
 	uint8_t           FM_SelectedChannel;
 	bool              FM_IsMrMode;
 	uint16_t          FM_FrequencyPlaying;
-	uint8_t 		  FM_Band  : 2;
+	uint8_t 		  FM_Band  : 1;
 	//uint8_t 		  FM_Space : 2;
 #endif
 
