@@ -47,7 +47,7 @@ jobs:
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           file: firmware.packed.bin
-          asset_name: egzumer_$tag.packed.bin
+          asset_name: UV-K5_JP-AIR_$tag.packed.bin
           tag: ${{ github.ref }}
           overwrite: true
           release_name: release ${{ github.ref_name }}     
