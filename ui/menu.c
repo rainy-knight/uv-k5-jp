@@ -40,7 +40,7 @@
 const t_menu_item MenuList[] =
 {
 //   text,     voice ID,                               menu ID
-	{"Step",   VOICE_ID_FREQUENCY_STEP,                MENU_STEP          },
+	{ {0xBD, 0xC3, 0xD9, 0xC1},   VOICE_ID_FREQUENCY_STEP,                MENU_STEP          }, //ステップ
 	{"TxPwr",  VOICE_ID_POWER,                         MENU_TXP           }, // was "TXP"
 	{"RxDCS",  VOICE_ID_DCS,                           MENU_R_DCS         }, // was "R_DCS"
 	{"RxCTCS", VOICE_ID_CTCSS,                         MENU_R_CTCS        }, // was "R_CTCS"
@@ -52,12 +52,12 @@ const t_menu_item MenuList[] =
 	{"Scramb", VOICE_ID_SCRAMBLER_ON,                  MENU_SCR           }, // was "SCR"
 	{"BusyCL", VOICE_ID_BUSY_LOCKOUT,                  MENU_BCL           }, // was "BCL"
 	{"Compnd", VOICE_ID_INVALID,                       MENU_COMPAND       },
-	{"Demodu", VOICE_ID_INVALID,                       MENU_AM            }, // was "AM"
-	{"ScAdd1", VOICE_ID_INVALID,                       MENU_S_ADD1        },
-	{"ScAdd2", VOICE_ID_INVALID,                       MENU_S_ADD2        },
-	{"ChSave", VOICE_ID_MEMORY_CHANNEL,                MENU_MEM_CH        }, // was "MEM-CH"
-	{"ChDele", VOICE_ID_DELETE_CHANNEL,                MENU_DEL_CH        }, // was "DEL-CH"
-	{"ChName", VOICE_ID_INVALID,                       MENU_MEM_NAME      },
+	{{0x43,0x48,0xC1,0xAE,0xB3} , VOICE_ID_INVALID,                       MENU_AM            }, // was "AM" //ﾍﾝﾁｮｳ
+	{{0x43,0x48,0xC1,0xB2,0xB6,0x31}, VOICE_ID_INVALID,                       MENU_S_ADD1        }, //ﾁｬﾈﾙﾂｲｶ1
+	{{0x43,0x48,0xC1,0xB2,0xB6,0x32}, VOICE_ID_INVALID,                       MENU_S_ADD2        }, //ﾁｬﾈﾙﾂｲｶ2
+	{{0x43,0x48,0xCE,0xBF,0xDE,0xDD}, VOICE_ID_MEMORY_CHANNEL,                MENU_MEM_CH        }, // was "MEM-CH" //ﾁｬﾈﾙﾎｿﾞﾝ
+	{{0x43,0x48,0xBB,0xB8,0xBC,0xDE,0xAE}, VOICE_ID_DELETE_CHANNEL,                MENU_DEL_CH        }, // was "DEL-CH"
+	{{0x43,0x48,0xC5,0xCF,0xB4}, VOICE_ID_INVALID,                       MENU_MEM_NAME      }, //ﾁｬﾈﾙﾅﾏｴ
 
 	{"SList",  VOICE_ID_INVALID,                       MENU_S_LIST        },
 	{"SList1", VOICE_ID_INVALID,                       MENU_SLIST1        },
@@ -72,7 +72,7 @@ const t_menu_item MenuList[] =
 	{"F2Long",    VOICE_ID_INVALID,                    MENU_F2LONG        },
 	{"M Long",    VOICE_ID_INVALID,                    MENU_MLONG         },
 
-	{"KeyLck", VOICE_ID_INVALID,                       MENU_AUTOLK        }, // was "AUTOLk"
+	{{0xB7,0xB0,0XDB,0xAF,0xB8 }, VOICE_ID_INVALID,                       MENU_AUTOLK        }, // was "AUTOLk"　//ｷｰﾛｯｸ
 	{"TxTOut", VOICE_ID_TRANSMIT_OVER_TIME,            MENU_TOT           }, // was "TOT"
 	{"BatSav", VOICE_ID_SAVE_MODE,                     MENU_SAVE          }, // was "SAVE"
 	{"Mic",    VOICE_ID_INVALID,                       MENU_MIC           },
@@ -122,7 +122,7 @@ const t_menu_item MenuList[] =
 #endif
 	{"BatVol", VOICE_ID_INVALID,                       MENU_VOL           }, // was "VOL"
 	{"RxMode", VOICE_ID_DUAL_STANDBY,                  MENU_TDR           },
-	{"Sql",    VOICE_ID_SQUELCH,                       MENU_SQL           },
+	{ { 0xBD , 0xB9, 0xD9, 0xC1},    VOICE_ID_SQUELCH,                       MENU_SQL           }, //ｽｹﾙﾁ
 
 	// hidden menu items from here on
 	// enabled if pressing both the PTT and upper side button at power-on
