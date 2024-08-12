@@ -71,7 +71,7 @@ void UI_PrintStringBuffer(const char *pString, uint8_t * buffer, uint32_t char_w
 	const unsigned int char_spacing = char_width + 1;
 	for (size_t i = 0; i < Length; i++) {
 		const unsigned int index = pString[i] - ' ' - 1;
-		if (pString[i] > ' ' && pString[i] < 127) {
+		if (pString[i] > ' ' && pString[i] < 255) {
 			const uint32_t offset = i * char_spacing + 1;
 			memcpy(buffer + offset, font + index * char_width, char_width);
 		}
