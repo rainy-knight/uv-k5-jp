@@ -40,7 +40,7 @@
 const t_menu_item MenuList[] =
 {
 //   text,     voice ID,                               menu ID
-	{ {0xBD, 0xC3, 0xD9, 0xC1},   VOICE_ID_FREQUENCY_STEP,                MENU_STEP          }, //ステップ
+	{ {0xBD, 0xC3, 0xAF, 0xCC},   VOICE_ID_FREQUENCY_STEP,                MENU_STEP          }, //ステップ
 	{"TxPwr",  VOICE_ID_POWER,                         MENU_TXP           }, // was "TXP"
 	{"RxDCS",  VOICE_ID_DCS,                           MENU_R_DCS         }, // was "R_DCS"
 	{"RxCTCS", VOICE_ID_CTCSS,                         MENU_R_CTCS        }, // was "R_CTCS"
@@ -59,10 +59,10 @@ const t_menu_item MenuList[] =
 	{{0x43,0x48,0xBB,0xB8,0xBC,0xDE,0xAE}, VOICE_ID_DELETE_CHANNEL,                MENU_DEL_CH        }, // was "DEL-CH"
 	{{0x43,0x48,0xC5,0xCF,0xB4}, VOICE_ID_INVALID,                       MENU_MEM_NAME      }, //ﾁｬﾈﾙﾅﾏｴ
 
-	{"SList",  VOICE_ID_INVALID,                       MENU_S_LIST        },
-	{"SList1", VOICE_ID_INVALID,                       MENU_SLIST1        },
-	{"SList2", VOICE_ID_INVALID,                       MENU_SLIST2        },
-	{"ScnRev", VOICE_ID_INVALID,                       MENU_SC_REV        },
+	{ { 0x53, 0xD8, 0xBD, 0xC4} ,  VOICE_ID_INVALID,                       MENU_S_LIST        }, //"SList"
+	{ { 0x53, 0xD8, 0xBD, 0xC4, 0x31} , VOICE_ID_INVALID,                       MENU_SLIST1        },//SList1
+	{ { 0x53, 0xD8, 0xBD, 0xC4, 0x32}, VOICE_ID_INVALID,                       MENU_SLIST2        }, //SList2
+	{"ScnRev", VOICE_ID_INVALID,                       MENU_SC_REV        }, //ScnRev
 #ifdef ENABLE_NOAA
 	{"NOAA-S", VOICE_ID_INVALID,                       MENU_NOAA_S        },
 #endif
@@ -86,7 +86,7 @@ const t_menu_item MenuList[] =
 	{"BLMin",  VOICE_ID_INVALID,                       MENU_ABR_MIN       },
 	{"BLMax",  VOICE_ID_INVALID,                       MENU_ABR_MAX       },
 	{"BltTRX", VOICE_ID_INVALID,                       MENU_ABR_ON_TX_RX  },
-	{"Beep",   VOICE_ID_BEEP_PROMPT,                   MENU_BEEP          },
+	{ {0xB7 , 0x2D, 0xB5, 0xDD },   VOICE_ID_BEEP_PROMPT,                   MENU_BEEP          },
 #ifdef ENABLE_VOICE
 	{"Voice",  VOICE_ID_VOICE_PROMPT,                  MENU_VOICE         },
 #endif
@@ -121,7 +121,7 @@ const t_menu_item MenuList[] =
 	{"VOX",    VOICE_ID_VOX,                           MENU_VOX           },
 #endif
 	{"BatVol", VOICE_ID_INVALID,                       MENU_VOL           }, // was "VOL"
-	{"RxMode", VOICE_ID_DUAL_STANDBY,                  MENU_TDR           },
+	{ { 0x52, 0x78, 0xD3, 0x2D, 0x3D }, VOICE_ID_DUAL_STANDBY,                  MENU_TDR           },
 	{ { 0xBD , 0xB9, 0xD9, 0xC1},    VOICE_ID_SQUELCH,                       MENU_SQL           }, //ｽｹﾙﾁ
 
 	// hidden menu items from here on
