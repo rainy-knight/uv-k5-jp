@@ -89,7 +89,7 @@ void UI_PrintString(const char *pString, uint8_t Start, uint8_t End, uint8_t Lin
 	for (i = 0; i < Length; i++)
 	{
 		const unsigned int ofs   = (unsigned int)Start + (i * Width);
-		if (pString[i] > ' ' && pString[i] < 127)
+		if (pString[i] > ' ' && pString[i] < 255)
 		{
 			const unsigned int index = pString[i] - ' ' - 1;
 			memcpy(gFrameBuffer[Line + 0] + ofs, &gFontBig[index][0], 7);
