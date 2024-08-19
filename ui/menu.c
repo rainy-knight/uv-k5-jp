@@ -56,7 +56,7 @@ const t_menu_item MenuList[] =
 	{{0x43,0x48,0xC2,0xB2,0xB6,0x31}, VOICE_ID_INVALID,                       MENU_S_ADD1        }, //ﾁｬﾈﾙﾂｲｶ1
 	{{0x43,0x48,0xC2,0xB2,0xB6,0x32}, VOICE_ID_INVALID,                       MENU_S_ADD2        }, //ﾁｬﾈﾙﾂｲｶ2
 	{{0x43,0x48,0xCE,0xBF,0xDE,0xDD}, VOICE_ID_MEMORY_CHANNEL,                MENU_MEM_CH        }, // was "MEM-CH" //ﾁｬﾈﾙﾎｿﾞﾝ
-	{{0x43,0x48,0xBB,0xB8,0xBC,0xDE,0xAE}, VOICE_ID_DELETE_CHANNEL,                MENU_DEL_CH        }, // was "DEL-CH"
+	{{0x43,0x48,0xBB,0xB8,0xBC,0xD6}, VOICE_ID_DELETE_CHANNEL,                MENU_DEL_CH        }, // was "DEL-CH"
 	{{0x43,0x48,0xC5,0xCF,0xB4}, VOICE_ID_INVALID,                       MENU_MEM_NAME      }, //ﾁｬﾈﾙﾅﾏｴ
 
 	{ { 0x53, 0xD8, 0xBD, 0xC4} ,  VOICE_ID_INVALID,                       MENU_S_LIST        }, //"SList"
