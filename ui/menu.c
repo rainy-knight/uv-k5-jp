@@ -53,11 +53,11 @@ const t_menu_item MenuList[] =
 	// {"BusyCL", VOICE_ID_BUSY_LOCKOUT,                  MENU_BCL           }, // was "BCL"
 	{"Compnd", VOICE_ID_INVALID,                       MENU_COMPAND       },
 	{{0x82,0x83} , VOICE_ID_INVALID,                       MENU_AM            }, // was "AM" //ﾍﾝﾁｮｳ //変調
-	{{0x43,0x48,0xC2,0xB2,0xB6,0x31}, VOICE_ID_INVALID,                       MENU_S_ADD1        }, //ﾁｬﾈﾙﾂｲｶ1　//CH追加1
-	{{0x43,0x48,0xC2,0xB2,0xB6,0x32}, VOICE_ID_INVALID,                       MENU_S_ADD2        }, //ﾁｬﾈﾙﾂｲｶ2 //CH追加２
-	{{0x43,0x48,0xCE,0xBF,0xDE,0xDD}, VOICE_ID_MEMORY_CHANNEL,                MENU_MEM_CH        }, // was "MEM-CH" //ﾁｬﾈﾙﾎｿﾞﾝ //CH保存
-	{{0x43,0x48,0xBB,0xB8,0xBC,0xD6}, VOICE_ID_DELETE_CHANNEL,                MENU_DEL_CH        }, // was "DEL-CH"　//CH削除
-	{{0x43,0x48,0xC5,0xCF,0xB4}, VOICE_ID_INVALID,                       MENU_MEM_NAME      }, //ﾁｬﾈﾙﾅﾏｴ　// CH名前
+	{{0x43,0x48, 0x84 , 0x85 ,0x31}, VOICE_ID_INVALID,                       MENU_S_ADD1        }, //ﾁｬﾈﾙﾂｲｶ1　//CH追加1
+	{{0x43,0x48, 0x84 , 0x85 ,0x32}, VOICE_ID_INVALID,                       MENU_S_ADD2        }, //ﾁｬﾈﾙﾂｲｶ2 //CH追加２
+	{{0x43,0x48, 0x86 , 0x87 }, VOICE_ID_MEMORY_CHANNEL,                MENU_MEM_CH        }, // was "MEM-CH" //ﾁｬﾈﾙﾎｿﾞﾝ //CH保存
+	{{0x43,0x48, 0x88 , 0x89 }, VOICE_ID_DELETE_CHANNEL,                MENU_DEL_CH        }, // was "DEL-CH"　//CH削除
+	{{0x43,0x48, 0x8A }, VOICE_ID_INVALID,                       MENU_MEM_NAME      }, //ﾁｬﾈﾙﾅﾏｴ　// CH名
 
 	{ { 0x53, 0xD8, 0xBD, 0xC4} ,  VOICE_ID_INVALID,                       MENU_S_LIST        }, //"SList" //Sリスト
 	{ { 0x53, 0xD8, 0xBD, 0xC4, 0x31} , VOICE_ID_INVALID,                       MENU_SLIST1        },//SList1 //Sリスト１
@@ -66,11 +66,11 @@ const t_menu_item MenuList[] =
 #ifdef ENABLE_NOAA
 	{"NOAA-S", VOICE_ID_INVALID,                       MENU_NOAA_S        },
 #endif
-	{"F1Shrt",    VOICE_ID_INVALID,                    MENU_F1SHRT        }, //F1 短押
-	{"F1Long",    VOICE_ID_INVALID,                    MENU_F1LONG        }, //F1 長押
-	{"F2Shrt",    VOICE_ID_INVALID,                    MENU_F2SHRT        }, //F1 短押
-	{"F2Long",    VOICE_ID_INVALID,                    MENU_F2LONG        }, //F1 長押
-	{"M Long",    VOICE_ID_INVALID,                    MENU_MLONG         }, //M  長押
+	{ { 0x46 , 0x31 ,0x8C, 0x8D },    VOICE_ID_INVALID,                    MENU_F1SHRT        }, //F1 短押
+	{ { 0x46 , 0x31 ,0x8B, 0x8D },    VOICE_ID_INVALID,                    MENU_F1LONG        }, //F1 長押
+	{ { 0x46 , 0x32 ,0x8C, 0x8D },    VOICE_ID_INVALID,                    MENU_F2SHRT        }, //F1 短押
+	{ { 0x46 , 0x32 ,0x8B, 0x8D },    VOICE_ID_INVALID,                    MENU_F2LONG        }, //F1 長押
+	{ { 0x4D ,0x8B, 0x8D},    VOICE_ID_INVALID,                    MENU_MLONG         }, //M  長押
 
 	{{0xB7,0x2D,0XDB,0xAF,0xB8 }, VOICE_ID_INVALID,                       MENU_AUTOLK        }, // was "AUTOLk"　//ｷｰﾛｯｸ
 	// {"TxTOut", VOICE_ID_TRANSMIT_OVER_TIME,            MENU_TOT           }, // was "TOT"
