@@ -40,25 +40,15 @@
 const t_menu_item MenuList[] =
 {
 //   text,     voice ID,                               menu ID
+	{ { 0xBD , 0xB9, 0xD9, 0xC1},    VOICE_ID_SQUELCH,                       MENU_SQL           }, //ｽｹﾙﾁ
 	{ {0xBD, 0xC3, 0xAF, 0xCC,0xDF},   VOICE_ID_FREQUENCY_STEP,                MENU_STEP          }, //ステップ
-	// {"TxPwr",  VOICE_ID_POWER,                         MENU_TXP           }, // was "TXP"
-	{"RxDCS",  VOICE_ID_DCS,                           MENU_R_DCS         }, // was "R_DCS"
-	{"RxCTCS", VOICE_ID_CTCSS,                         MENU_R_CTCS        }, // was "R_CTCS"
-	// {"TxDCS",  VOICE_ID_DCS,                           MENU_T_DCS         }, // was "T_DCS"
-	// {"TxCTCS", VOICE_ID_CTCSS,                         MENU_T_CTCS        }, // was "T_CTCS"
-	// {"TxODir", VOICE_ID_TX_OFFSET_FREQUENCY_DIRECTION, MENU_SFT_D         }, // was "SFT_D"
-	// {"TxOffs", VOICE_ID_TX_OFFSET_FREQUENCY,           MENU_OFFSET        }, // was "OFFSET"
-	{"W/N",    VOICE_ID_CHANNEL_BANDWIDTH,             MENU_W_N           },
-	// {"Scramb", VOICE_ID_SCRAMBLER_ON,                  MENU_SCR           }, // was "SCR"
-	// {"BusyCL", VOICE_ID_BUSY_LOCKOUT,                  MENU_BCL           }, // was "BCL"
-	{"Compnd", VOICE_ID_INVALID,                       MENU_COMPAND       },
+	{ { 0x80 , 0x81, 0xD3, 0x2D, 0xC4, 0xDE }, VOICE_ID_DUAL_STANDBY,                  MENU_TDR           }, //受信モード
 	{{0x82,0x83} , VOICE_ID_INVALID,                       MENU_AM            }, // was "AM" //ﾍﾝﾁｮｳ //変調
 	{{0x43,0x48, 0x84 , 0x85 ,0x31}, VOICE_ID_INVALID,                       MENU_S_ADD1        }, //ﾁｬﾈﾙﾂｲｶ1　//CH追加1
 	{{0x43,0x48, 0x84 , 0x85 ,0x32}, VOICE_ID_INVALID,                       MENU_S_ADD2        }, //ﾁｬﾈﾙﾂｲｶ2 //CH追加２
 	{{0x43,0x48, 0x86 , 0x87 }, VOICE_ID_MEMORY_CHANNEL,                MENU_MEM_CH        }, // was "MEM-CH" //ﾁｬﾈﾙﾎｿﾞﾝ //CH保存
 	{{0x43,0x48, 0x88 , 0x89 }, VOICE_ID_DELETE_CHANNEL,                MENU_DEL_CH        }, // was "DEL-CH"　//CH削除
 	{{0x43,0x48, 0x8A }, VOICE_ID_INVALID,                       MENU_MEM_NAME      }, //ﾁｬﾈﾙﾅﾏｴ　// CH名
-
 	{ { 0x53, 0xD8, 0xBD, 0xC4} ,  VOICE_ID_INVALID,                       MENU_S_LIST        }, //"SList" //Sリスト
 	{ { 0x53, 0xD8, 0xBD, 0xC4, 0x31} , VOICE_ID_INVALID,                       MENU_SLIST1        },//SList1 //Sリスト１
 	{ { 0x53, 0xD8, 0xBD, 0xC4, 0x32}, VOICE_ID_INVALID,                       MENU_SLIST2        }, //SList2　//Sリスト２
@@ -73,6 +63,14 @@ const t_menu_item MenuList[] =
 	{ { 0x4D ,0x8B, 0x8D},    VOICE_ID_INVALID,                    MENU_MLONG         }, //M  長押
 
 	{{0xB7,0x2D,0XDB,0xAF,0xB8 }, VOICE_ID_INVALID,                       MENU_AUTOLK        }, // was "AUTOLk"　//ｷｰﾛｯｸ
+	{ {'O','N',0x95,0x96}, VOICE_ID_INVALID,                       MENU_PONMSG        }, //ON画面
+	{ {0x8f,0x90,0x93,0x94}, VOICE_ID_INVALID,                       MENU_BAT_TXT       }, //電源表示
+	{ {0x95,0x96,0x93,0x94}, VOICE_ID_INVALID,                       MENU_ABR           }, // was "ABR" //画面表示
+	{ {0x95,0x96,'M','i','n'},  VOICE_ID_INVALID,                       MENU_ABR_MIN       }, //画面Min
+	{ {0x95,0x96,'M','a','x'},  VOICE_ID_INVALID,                       MENU_ABR_MAX       }, //画面Max
+
+	{ {0xCA, 0xDE,0xAF,0xC3,0xD8,0x2D}, VOICE_ID_INVALID,                       MENU_VOL           }, // was "VOL" //"BatVol"　//バッテリー
+	{ {0xB7 , 0x2D, 0xB5, 0xDD },   VOICE_ID_BEEP_PROMPT,                   MENU_BEEP          }, //キー音
 	// {"TxTOut", VOICE_ID_TRANSMIT_OVER_TIME,            MENU_TOT           }, // was "TOT"
 	{"BatSav", VOICE_ID_SAVE_MODE,                     MENU_SAVE          }, // was "SAVE"
 	// {"Mic",    VOICE_ID_INVALID,                       MENU_MIC           },
@@ -80,13 +78,7 @@ const t_menu_item MenuList[] =
 	// {"MicBar", VOICE_ID_INVALID,                       MENU_MIC_BAR       },
 #endif
 	// {"ChDisp", VOICE_ID_INVALID,                       MENU_MDF           }, // was "MDF"
-	{"POnMsg", VOICE_ID_INVALID,                       MENU_PONMSG        },
-	{"BatTxt", VOICE_ID_INVALID,                       MENU_BAT_TXT       },
-	{"BackLt", VOICE_ID_INVALID,                       MENU_ABR           }, // was "ABR"
-	{"BLMin",  VOICE_ID_INVALID,                       MENU_ABR_MIN       },
-	{"BLMax",  VOICE_ID_INVALID,                       MENU_ABR_MAX       },
-	{"BltTRX", VOICE_ID_INVALID,                       MENU_ABR_ON_TX_RX  },
-	{ {0xB7 , 0x2D, 0xB5, 0xDD },   VOICE_ID_BEEP_PROMPT,                   MENU_BEEP          }, //キー音
+
 #ifdef ENABLE_VOICE
 	{"Voice",  VOICE_ID_VOICE_PROMPT,                  MENU_VOICE         },
 #endif
@@ -113,6 +105,22 @@ const t_menu_item MenuList[] =
 	{"D Decd", VOICE_ID_INVALID,                       MENU_D_DCD         },
 	{"D List", VOICE_ID_INVALID,                       MENU_D_LIST        },
 #endif
+
+	// {"TxPwr",  VOICE_ID_POWER,                         MENU_TXP           }, // was "TXP"
+	{"RxDCS",  VOICE_ID_DCS,                           MENU_R_DCS         }, // was "R_DCS"
+	{"RxCTCS", VOICE_ID_CTCSS,                         MENU_R_CTCS        }, // was "R_CTCS"
+	// {"TxDCS",  VOICE_ID_DCS,                           MENU_T_DCS         }, // was "T_DCS"
+	// {"TxCTCS", VOICE_ID_CTCSS,                         MENU_T_CTCS        }, // was "T_CTCS"
+	// {"TxODir", VOICE_ID_TX_OFFSET_FREQUENCY_DIRECTION, MENU_SFT_D         }, // was "SFT_D"
+	// {"TxOffs", VOICE_ID_TX_OFFSET_FREQUENCY,           MENU_OFFSET        }, // was "OFFSET"
+	{"W/N",    VOICE_ID_CHANNEL_BANDWIDTH,             MENU_W_N           },
+	// {"Scramb", VOICE_ID_SCRAMBLER_ON,                  MENU_SCR           }, // was "SCR"
+	// {"BusyCL", VOICE_ID_BUSY_LOCKOUT,                  MENU_BCL           }, // was "BCL"
+	{"Compnd", VOICE_ID_INVALID,                       MENU_COMPAND       },
+
+	{"BltTRX", VOICE_ID_INVALID,                       MENU_ABR_ON_TX_RX  },
+
+
 	{"D Live", VOICE_ID_INVALID,                       MENU_D_LIVE_DEC    }, // live DTMF decoder
 #ifdef ENABLE_AM_FIX
 	{"AM Fix", VOICE_ID_INVALID,                       MENU_AM_FIX        },
@@ -120,9 +128,7 @@ const t_menu_item MenuList[] =
 #ifdef ENABLE_VOX
 	{"VOX",    VOICE_ID_VOX,                           MENU_VOX           },
 #endif
-	{ {0xCA, 0xDE,0xAF,0xC3,0xD8,0x2D}, VOICE_ID_INVALID,                       MENU_VOL           }, // was "VOL" //"BatVol"　//バッテリー
-	{ { 0x80 , 0x81, 0xD3, 0x2D, 0xC4, 0xDE }, VOICE_ID_DUAL_STANDBY,                  MENU_TDR           }, //受信モード
-	{ { 0xBD , 0xB9, 0xD9, 0xC1},    VOICE_ID_SQUELCH,                       MENU_SQL           }, //ｽｹﾙﾁ
+
 
 	// hidden menu items from here on
 	// enabled if pressing both the PTT and upper side button at power-on
@@ -308,9 +314,9 @@ const char gSubMenu_RX_TX[][6] =
 
 const char gSubMenu_BAT_TXT[][8] =
 {
-	"NONE",
-	"VOLTAGE",
-	"PERCENT"
+	{ 0x97 },
+	{ 0x8f, 0x92}, // 電圧
+	"\%"
 };
 
 const char gSubMenu_BATTYP[][9] =
