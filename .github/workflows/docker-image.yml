@@ -32,6 +32,8 @@ jobs:
         
       - name: safe.directory
         run:  git config --global --add safe.directory /__w/uv-k5-firmware-custom/uv-k5-firmware-custom        
+      - name: debug describe
+        run:  git describe --tags --exact-match 2
       - name: Make
         run:  make
       - name: size
