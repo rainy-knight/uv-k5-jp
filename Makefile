@@ -204,7 +204,7 @@ AUTHOR_STRING ?= JP-AIR
 # the user might not have/want git installed
 # can set own version string here (max 7 chars)
 ifneq (, $(shell $(WHERE) git))
-	VERSION_STRING ?= $(shell git describe --tags --abbrev=0>$(NULL_OUTPUT))
+	VERSION_STRING ?= $(shell git describe --tags --abbrev=0)
 	ifeq (, $(VERSION_STRING))
     	VERSION_STRING := $(shell git rev-parse --short HEAD)
 	endif
