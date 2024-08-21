@@ -44,6 +44,7 @@ const t_menu_item MenuList[] =
 	{ {0xBD, 0xC3, 0xAF, 0xCC,0xDF},   VOICE_ID_FREQUENCY_STEP,                MENU_STEP          }, //ステップ
 	{ { 0x80 , 0x81, 0xD3, 0x2D, 0xC4, 0xDE }, VOICE_ID_DUAL_STANDBY,                  MENU_TDR           }, //受信モード
 	{{0x82,0x83} , VOICE_ID_INVALID,                       MENU_AM            }, // was "AM" //ﾍﾝﾁｮｳ //変調
+	{ {'C','H', 0x93,0x94}, VOICE_ID_INVALID,                       MENU_MDF           }, // was "MDF" //CH表示
 	{{0x43,0x48, 0x84 , 0x85 ,0x31}, VOICE_ID_INVALID,                       MENU_S_ADD1        }, //ﾁｬﾈﾙﾂｲｶ1　//CH追加1
 	{{0x43,0x48, 0x84 , 0x85 ,0x32}, VOICE_ID_INVALID,                       MENU_S_ADD2        }, //ﾁｬﾈﾙﾂｲｶ2 //CH追加２
 	{{0x43,0x48, 0x86 , 0x87 }, VOICE_ID_MEMORY_CHANNEL,                MENU_MEM_CH        }, // was "MEM-CH" //ﾁｬﾈﾙﾎｿﾞﾝ //CH保存
@@ -77,7 +78,7 @@ const t_menu_item MenuList[] =
 #ifdef ENABLE_AUDIO_BAR
 	// {"MicBar", VOICE_ID_INVALID,                       MENU_MIC_BAR       },
 #endif
-	// {"ChDisp", VOICE_ID_INVALID,                       MENU_MDF           }, // was "MDF"
+
 
 #ifdef ENABLE_VOICE
 	{"Voice",  VOICE_ID_VOICE_PROMPT,                  MENU_VOICE         },
@@ -224,13 +225,13 @@ const char gSubMenu_SC_REV[][8] =
 	"STOP"
 };
 
-// const char* const gSubMenu_MDF[] =
-// {
-// 	"FREQ",
-// 	"CHANNEL\nNUMBER",
-// 	"NAME",
-// 	"NAME\n+\nFREQ"
-// };
+const char* const gSubMenu_MDF[] =
+{
+	"FREQ",
+	"CHANNEL\nNUMBER",
+	"NAME",
+	"NAME\n+\nFREQ"
+};
 
 #ifdef ENABLE_ALARM
 	const char gSubMenu_AL_MOD[][5] =
@@ -721,9 +722,9 @@ void UI_DisplayMenu(void)
 			strcpy(String, gSubMenu_SC_REV[gSubMenuSelection]);
 			break;
 
-		// case MENU_MDF:
-		// 	strcpy(String, gSubMenu_MDF[gSubMenuSelection]);
-		// 	break;
+		case MENU_MDF:
+			strcpy(String, gSubMenu_MDF[gSubMenuSelection]);
+			break;
 
 		case MENU_RP_STE:
 			if (gSubMenuSelection == 0)
