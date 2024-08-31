@@ -364,7 +364,7 @@ void SETTINGS_FetchChannelName(char *s, const int channel)
 
 	int i;
 	for (i = 0; i < 10; i++)
-		if (s[i] < 32 || s[i] > 127)
+		if (s[i] < 32 || s[i] > 254)
 			break;                // invalid char
 
 	s[i--] = 0;                   // null term
