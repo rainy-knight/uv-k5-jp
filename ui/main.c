@@ -561,10 +561,10 @@ void UI_DisplayMain(void)
 					case MDF_NAME_FREQ:	// show the channel name and frequency
 
 						SETTINGS_FetchChannelName(String, gEeprom.ScreenChannel[vfo_num]);
-						if (String[0] == 0)
-						{	// no channel name, show the channel number instead
-							sprintf(String, "CH-%03u", gEeprom.ScreenChannel[vfo_num] + 1);
-						}
+						// if (String[0] == 0)
+						// {	// no channel name, show the channel number instead
+						// 	sprintf(String, "CH-%03u", gEeprom.ScreenChannel[vfo_num] + 1);
+						// }
 
 						if (gEeprom.CHANNEL_DISPLAY_MODE == MDF_NAME) {
 							UI_PrintString(String, 32, 0, line, 8);
